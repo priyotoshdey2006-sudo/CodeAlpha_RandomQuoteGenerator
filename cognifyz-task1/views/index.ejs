@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cognifyz Task 1</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Cognifyz Technologies</h1>
+
+        <h2>Full Stack Development</h2>
+
+        <p class="task-title">Level 1 - Task 1</p>
+
+        <h3>User Information Form</h3>
+
+        <form action="/submit" method="POST">
+
+            <label for="name">Name</label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="email">Email</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+
+        <% if (message) { %>
+
+            <div class="result">
+
+                <h3>
+                    <%= message %>
+                </h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    <%= name %>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <%= email %>
+                </p>
+
+            </div>
+
+        <% } %>
+
+    </div>
+
+</body>
+
+</html>

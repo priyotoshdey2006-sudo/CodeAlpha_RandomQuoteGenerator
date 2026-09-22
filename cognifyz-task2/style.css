@@ -1,0 +1,558 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #0b1020;
+    --bg-secondary: #11182d;
+
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.14);
+
+    --text-main: #ffffff;
+    --text-secondary: #aeb8d0;
+
+    --accent: #8b5cf6;
+    --accent-light: #a78bfa;
+
+    --button-text: #ffffff;
+
+    --shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+body.light-theme {
+    --bg-main: #eef2ff;
+    --bg-secondary: #ffffff;
+
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(80, 70, 150, 0.15);
+
+    --text-main: #17172b;
+    --text-secondary: #62677d;
+
+    --accent: #6d28d9;
+    --accent-light: #8b5cf6;
+
+    --button-text: #ffffff;
+
+    --shadow: 0 25px 80px rgba(60, 50, 120, 0.15);
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--text-main);
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(139, 92, 246, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(59, 130, 246, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--bg-main),
+            var(--bg-secondary)
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+/* =========================
+   BACKGROUND SHAPES
+========================= */
+
+.background-shape {
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    opacity: 0.5;
+}
+
+.shape-one {
+    width: 280px;
+    height: 280px;
+
+    background: rgba(139, 92, 246, 0.25);
+
+    top: -100px;
+    left: -80px;
+}
+
+.shape-two {
+    width: 300px;
+    height: 300px;
+
+    background: rgba(37, 99, 235, 0.20);
+
+    right: -100px;
+    bottom: -120px;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.app-container {
+    width: min(900px, 92%);
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 30px 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            #3b82f6
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(139, 92, 246, 0.35);
+}
+
+.brand h1 {
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+.brand p {
+    margin-top: 2px;
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+}
+
+.icon-button {
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 50%;
+
+    background: var(--card-bg);
+
+    color: var(--text-main);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.25s ease;
+}
+
+.icon-button:hover {
+    transform: rotate(20deg) scale(1.05);
+
+    border-color: var(--accent);
+}
+
+/* =========================
+   QUOTE CARD
+========================= */
+
+.quote-card {
+    position: relative;
+
+    padding: 65px 70px 45px;
+
+    border-radius: 28px;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--card-border);
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+.quote-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            #3b82f6,
+            var(--accent-light)
+        );
+}
+
+/* =========================
+   QUOTE ICON
+========================= */
+
+.quote-icon {
+    position: absolute;
+
+    top: 25px;
+    left: 45px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 90px;
+
+    line-height: 1;
+
+    color: var(--accent);
+
+    opacity: 0.35;
+}
+
+/* =========================
+   QUOTE CONTENT
+========================= */
+
+.quote-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.quote-text {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(27px, 4vw, 44px);
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    letter-spacing: -0.8px;
+
+    max-width: 760px;
+
+    transition: opacity 0.25s ease,
+                transform 0.25s ease;
+}
+
+.quote-text.animate {
+    animation: quoteAppear 0.45s ease;
+}
+
+@keyframes quoteAppear {
+
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   AUTHOR
+========================= */
+
+.author-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.author-line {
+    width: 32px;
+    height: 2px;
+
+    background: var(--accent);
+
+    border-radius: 10px;
+}
+
+.author {
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 45px;
+}
+
+button {
+    font-family: inherit;
+}
+
+.primary-button,
+.secondary-button {
+    height: 48px;
+
+    border-radius: 13px;
+
+    padding: 0 22px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.primary-button {
+    border: none;
+
+    color: var(--button-text);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            #6366f1
+        );
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(99, 102, 241, 0.35);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+.secondary-button {
+    color: var(--text-main);
+
+    background: transparent;
+
+    border: 1px solid var(--card-border);
+}
+
+.secondary-button:hover {
+    border-color: var(--accent);
+
+    background: rgba(139, 92, 246, 0.08);
+
+    transform: translateY(-2px);
+}
+
+.primary-button span,
+.secondary-button span {
+    margin-right: 6px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-message {
+    min-height: 20px;
+
+    margin-top: 14px;
+
+    font-size: 12px;
+
+    color: var(--text-secondary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    opacity: 0.8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .app-container {
+        width: 92%;
+
+        padding: 20px 0;
+    }
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .quote-card {
+        padding: 55px 25px 30px;
+
+        border-radius: 22px;
+    }
+
+    .quote-icon {
+        left: 22px;
+
+        font-size: 70px;
+    }
+
+    .quote-text {
+        font-size: 29px;
+
+        line-height: 1.35;
+    }
+
+    .actions {
+        margin-top: 35px;
+
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    footer {
+        flex-wrap: wrap;
+
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .brand-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+    }
+
+    .brand h1 {
+        font-size: 18px;
+    }
+
+    .quote-text {
+        font-size: 26px;
+    }
+
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cognifyz Task 5 - User Management</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            Cognifyz
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#users">Users</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="badge">
+                FULL STACK DEVELOPMENT
+            </p>
+
+            <h1>
+                REST API & User Management
+            </h1>
+
+            <p>
+                Cognifyz Technologies — Level 3 Task 5
+            </p>
+
+            <button onclick="scrollToUsers()">
+                Manage Users
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- User Management -->
+    <section class="users-section" id="users">
+
+        <div class="section-header">
+
+            <p class="small-title">
+                API MANAGEMENT
+            </p>
+
+            <h2>
+                User Management System
+            </h2>
+
+            <p>
+                Create, view, update and delete users using REST APIs.
+            </p>
+
+        </div>
+
+
+        <!-- Message -->
+        <div id="message"></div>
+
+
+        <!-- Add User -->
+        <div class="form-card">
+
+            <h3>
+                Add New User
+            </h3>
+
+            <form id="userForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter user name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email address"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Add User
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Search -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search users..."
+                oninput="searchUsers()"
+            >
+
+        </div>
+
+
+        <!-- Users -->
+        <div class="users-container">
+
+            <div class="users-header">
+
+                <h3>
+                    Registered Users
+                </h3>
+
+                <button onclick="loadUsers()">
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div id="usersList">
+
+                <p class="loading">
+                    Loading users...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <div>
+
+            <p class="small-title">
+                ABOUT TASK 5
+            </p>
+
+            <h2>
+                API Integration
+            </h2>
+
+            <p>
+                This project demonstrates RESTful API integration
+                using Node.js, Express.js and JavaScript Fetch API.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+            <div>
+                <strong>GET</strong>
+                <span>Read Users</span>
+            </div>
+
+            <div>
+                <strong>POST</strong>
+                <span>Create Users</span>
+            </div>
+
+            <div>
+                <strong>PUT</strong>
+                <span>Update Users</span>
+            </div>
+
+            <div>
+                <strong>DELETE</strong>
+                <span>Delete Users</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Cognifyz Technologies
+        </p>
+
+        <p>
+            Full Stack Development Internship
+        </p>
+
+    </footer>
+
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>

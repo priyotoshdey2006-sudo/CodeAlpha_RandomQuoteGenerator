@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cognifyz Task 4</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Cognifyz
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#register">Register</a>
+
+            <a href="#about">About</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Home Section -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="tag">
+                COGNIFYZ TECHNOLOGIES
+            </p>
+
+            <h1>
+                Smart Registration
+                <span>Validation System</span>
+            </h1>
+
+            <p>
+                A modern interactive form demonstrating
+                complex validation, dynamic DOM manipulation
+                and client-side routing.
+            </p>
+
+            <a href="#register" class="hero-button">
+                Get Started
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Registration Section -->
+
+    <section id="register" class="register-section">
+
+        <div class="form-container">
+
+            <div class="form-header">
+
+                <p class="small-title">
+                    LEVEL 2 - TASK 4
+                </p>
+
+                <h2>
+                    Create Your Account
+                </h2>
+
+                <p>
+                    Complete the form to register.
+                </p>
+
+            </div>
+
+
+            <form
+                id="registrationForm"
+                action="/register"
+                method="POST"
+            >
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                    >
+
+                    <small id="nameError"></small>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                    >
+
+                    <small id="emailError"></small>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a strong password"
+                    >
+
+                    <!-- Dynamic password strength -->
+
+                    <div class="password-strength">
+
+                        <div
+                            id="strengthBar"
+                            class="strength-bar"
+                        ></div>
+
+                    </div>
+
+                    <small id="passwordStrength">
+                        Password strength will appear here
+                    </small>
+
+                    <small id="passwordError"></small>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Re-enter your password"
+                    >
+
+                    <small id="confirmPasswordError"></small>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                    >
+
+                    <label for="terms">
+                        I agree to the terms and conditions
+                    </label>
+
+                </div>
+
+                <small id="termsError"></small>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section id="about" class="about-section">
+
+        <div class="about-content">
+
+            <p class="small-title">
+                ABOUT TASK 4
+            </p>
+
+            <h2>
+                Interactive Web Experience
+            </h2>
+
+            <p>
+                This project demonstrates complex form
+                validation, password strength checking,
+                dynamic DOM manipulation and responsive
+                web design.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Cognifyz Technologies
+        </p>
+
+        <p>
+            Full Stack Development Internship
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>

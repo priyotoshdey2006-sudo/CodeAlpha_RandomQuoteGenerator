@@ -1,0 +1,548 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f7f8fa;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background: #111;
+    color: white;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #aaa;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #e9ecef
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+
+    animation: fadeIn 1s ease;
+}
+
+.tag {
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 82px);
+
+    line-height: 1;
+
+    margin: 0 0 25px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero p:not(.tag) {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #666;
+
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #111;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-5px);
+
+    background: #333;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   REGISTER SECTION
+========================= */
+
+.register-section {
+    padding: 100px 20px;
+
+    background: #f7f8fa;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.14);
+}
+
+.form-header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.small-title {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #666;
+}
+
+.form-header h2 {
+    font-size: 36px;
+
+    margin: 10px 0;
+}
+
+.form-header p:last-child {
+    color: #777;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #111;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   PASSWORD STRENGTH
+========================= */
+
+.password-strength {
+    width: 100%;
+
+    height: 7px;
+
+    margin-top: 10px;
+
+    background: #e5e5e5;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.strength-bar {
+    width: 0;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    transition:
+        width 0.4s ease,
+        background 0.4s ease;
+}
+
+#passwordStrength {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* =========================
+   ERROR MESSAGES
+========================= */
+
+small {
+    display: block;
+
+    min-height: 18px;
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    color: #d00000;
+}
+
+
+/* =========================
+   TERMS
+========================= */
+
+.terms {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.terms input {
+    width: 17px;
+    height: 17px;
+}
+
+.terms label {
+    font-size: 14px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #333;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    padding: 100px 20px;
+
+    background: white;
+}
+
+.about-content {
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 42px;
+
+    margin: 10px 0 20px;
+}
+
+.about-content p:last-child {
+    color: #666;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #111;
+
+    color: white;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 80vh;
+
+        padding: 70px 6%;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero p:not(.tag) {
+        font-size: 16px;
+    }
+
+    .form-container {
+        padding: 30px 22px;
+    }
+
+    .form-header h2 {
+        font-size: 30px;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p:not(.tag) {
+        font-size: 15px;
+    }
+
+    .form-container {
+        padding: 25px 18px;
+    }
+
+    .form-header h2 {
+        font-size: 27px;
+    }
+
+}

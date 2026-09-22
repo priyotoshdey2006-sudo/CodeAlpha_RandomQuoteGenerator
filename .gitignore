@@ -1,0 +1,4 @@
+node_modules/
+*.log
+.env
+Cognifyz-Full-Stack-Tasks.zip

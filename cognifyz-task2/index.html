@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuoteFlow | Random Quote Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Decorations -->
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+
+    <main class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">Q</div>
+
+                <div>
+                    <h1>QuoteFlow</h1>
+                    <p>Words that inspire.</p>
+                </div>
+            </div>
+
+            <button id="themeButton" class="icon-button" title="Toggle theme">
+                ☀
+            </button>
+        </header>
+
+        <!-- Quote Card -->
+        <section class="quote-card">
+
+            <div class="quote-icon">“</div>
+
+            <div class="quote-content">
+
+                <p id="quoteText" class="quote-text">
+                    Click the button below to discover an inspiring quote.
+                </p>
+
+                <div class="author-wrapper">
+                    <span class="author-line"></span>
+                    <p id="authorText" class="author">
+                        QuoteFlow
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+
+                <button id="newQuoteButton" class="primary-button">
+                    <span>✦</span>
+                    New Quote
+                </button>
+
+                <button id="copyButton" class="secondary-button">
+                    <span>⧉</span>
+                    Copy
+                </button>
+
+            </div>
+
+            <div id="statusMessage" class="status-message"></div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Random Quote Generator</p>
+            <span>•</span>
+            <p>Built with HTML, CSS & JavaScript</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
